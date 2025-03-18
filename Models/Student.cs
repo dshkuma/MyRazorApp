@@ -10,7 +10,7 @@
             public int StudentId { get; set; }
 
             [Required]
-            public string Name { get; set; }
+            public string? Name { get; set; }
         }
     }
 

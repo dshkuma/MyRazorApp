@@ -7768,11 +7768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Web\\StudentApp\\StudentApp.csproj",
+      "projectUniqueName": "D:\\Web\\GIT\\MyRazorApp\\StudentApp.csproj",
       "projectName": "StudentApp",
-      "projectPath": "D:\\Web\\StudentApp\\StudentApp.csproj",
+      "projectPath": "D:\\Web\\GIT\\MyRazorApp\\StudentApp.csproj",
       "packagesPath": "C:\\Users\\deepal2\\.nuget\\packages\\",
-      "outputPath": "D:\\Web\\StudentApp\\obj\\",
+      "outputPath": "D:\\Web\\GIT\\MyRazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
