@@ -10,14 +10,14 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Ensures the build runs on Windows
+    runs-on: windows-latest  # Must use Windows to generate .exe
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4  # Updated to latest version
+        uses: actions/checkout@v4  # Use latest version
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4  # Updated to latest version
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'  # Change if using .NET 7 or 8
 
@@ -27,11 +27,11 @@ jobs:
       - name: Build the Application
         run: dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeAllContentForSelfExtract=true
 
-      - name: List Published Files
-        run: dir bin\Release\net6.0\win-x64\publish  # Debugging step to verify .exe exists
+      - name: Debug: List All Files After Build
+        run: Get-ChildItem -Path . -Recurse  # Shows all files to debug paths
 
       - name: Upload Executable
-        uses: actions/upload-artifact@v4  # Updated to latest version
+        uses: actions/upload-artifact@v4
         with:
           name: MyRazorApp-EXE
           path: bin/Release/net6.0/win-x64/publish/MyRazorApp.exe
