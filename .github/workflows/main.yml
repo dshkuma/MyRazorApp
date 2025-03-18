@@ -10,16 +10,16 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Must use Windows to generate .exe
+    runs-on: windows-latest  # Ensures it runs on a Windows machine
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4  # Use latest version
+        uses: actions/checkout@v4  # Ensures the latest code is pulled
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'  # Change if using .NET 7 or 8
+          dotnet-version: '8.0.x'  # Change to your actual .NET version
 
       - name: Restore Dependencies
         run: dotnet restore
@@ -28,7 +28,7 @@ jobs:
         run: dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeAllContentForSelfExtract=true
 
       - name: Debug: List All Files After Build
-        run: Get-ChildItem -Path . -Recurse  # Shows all files to debug paths
+        run: Get-ChildItem -Path . -Recurse
 
       - name: Upload Executable
         uses: actions/upload-artifact@v4
